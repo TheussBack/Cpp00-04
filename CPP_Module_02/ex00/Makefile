@@ -5,11 +5,10 @@
 #                                                     +:+ +:+         +:+      #
 #    By: hrobin <hrobin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/01/29 16:21:46 by uniix             #+#    #+#              #
-#    Updated: 2024/02/07 13:49:06 by hrobin           ###   ########.fr        #
+#    Created: 2024/02/08 12:43:14 by hrobin            #+#    #+#              #
+#    Updated: 2024/02/08 14:18:35 by hrobin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
 
 #----------colors-----------#
 NC=\033[0m
@@ -26,37 +25,34 @@ Blink=\033[5m
 Bold=\033[1m
 #---------------------------#
 
-NAME = HarleFilter
+NAME = Fixed
 
 CC = c++
 
 SRC =	main.cpp \
-        Harl.cpp
+		Fixed.cpp \
 
 OBJ = ${SRC:.cpp=.o}
 DEPS = ${SRC:.cpp=.d}
 
-INC = ./includes
-
-CPPFLAGS = -Wall -Wextra -Werror -g3 -MMD -std=c++98
+CPPFLAGS = -Wall -Wextra -Werror #-std=c++98
 
 .cpp.o:
-	@${CC} ${CPPFLAGS} -I${INC} -c $< -o ${<:.cpp=.o}
+	@${CC} ${CPPFLAGS} -c $< -o ${<:.cpp=.o}
 
 all:	${NAME}
 
 ${NAME}:	${OBJ}
-
-	@${CC} ${CPPFLAGS} -I${INC} ${OBJ} -o ${NAME}
+	@${CC} ${CPPFLAGS} ${OBJ} -o ${NAME}
 	@echo "${Red}${Blink}- ${NAME} ready.${NC}"
 
 clean:
 	@rm -f ${OBJ}
-	@echo "${Purple}${Blink}- ${NAME} cleaned.${NC}"
+	@echo "${Cyan}$- ${NAME} cleaned.${NC}"
 
 fclean: clean
 	@rm -f ${NAME} ${DEPS}
-	@echo "${Yellow}${Blink}- ${NAME} fcleaned.${NC}"
+	@echo "${Green} ${NAME} fcleaned.${NC}"
 
 aclean: all clean
 

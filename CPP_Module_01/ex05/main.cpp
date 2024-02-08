@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hrobin <hrobin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/30 17:39:23 by hrobin            #+#    #+#             */
-/*   Updated: 2024/02/07 13:08:37 by hrobin           ###   ########.fr       */
+/*   Created: 2024/02/07 13:01:39 by hrobin            #+#    #+#             */
+/*   Updated: 2024/02/07 13:22:02 by hrobin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
 
-#include <iostream>
-#include <iomanip>
-#include <string>
+#include "Harl.hpp"
 
-class Harl{
+int	main()
+{
+	std::string input;
+	Harl	harl;
 
-	private :
+	do
+	{
+		std::cout << "๋࣭ ⭑𝐄𝐧𝐭𝐞𝐫 𝐚 𝐥𝐞𝐯𝐞𝐥 ⊹₊⋆ :";
+		std::getline(std::cin, input);
+		if (!std::cin.good() || std::cin.eof())
+			return(1);
+		harl.complain(input);
+	} while (input != "exit");
 
-		void	debug();
-		void	info();
-		void	warning();
-		void	error();
-
-	public :
-
-		void	complain(std::string level);
-		Harl();
-		~Harl();
-
-};
-
-typedef void( Harl::*thoughs )( void );
+	return (0);
+}

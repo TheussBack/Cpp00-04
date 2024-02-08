@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hrobin <hrobin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/30 17:39:23 by hrobin            #+#    #+#             */
-/*   Updated: 2024/02/07 13:08:37 by hrobin           ###   ########.fr       */
+/*   Created: 2023/04/27 13:20:57 by maparigi          #+#    #+#             */
+/*   Updated: 2024/02/08 14:23:00 by hrobin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <iostream>
-#include <iomanip>
-#include <string>
+# include <iostream>
 
-class Harl{
+class Fixed
+{
+public:
 
-	private :
+    Fixed();
+    Fixed( const Fixed &neu );
+    Fixed& operator=( const Fixed &neu );
+    ~Fixed();
 
-		void	debug();
-		void	info();
-		void	warning();
-		void	error();
+    int     getRawBits( void ) const;
+    void    setRawBits( int const raw );
 
-	public :
+private:
 
-		void	complain(std::string level);
-		Harl();
-		~Harl();
+    int                 fixInt;
+    static const int    _fractionalBits = 8;
 
 };
 
-typedef void( Harl::*thoughs )( void );

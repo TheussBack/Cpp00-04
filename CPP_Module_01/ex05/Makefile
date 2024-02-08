@@ -6,7 +6,7 @@
 #    By: hrobin <hrobin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/29 16:21:46 by uniix             #+#    #+#              #
-#    Updated: 2024/01/30 15:18:45 by hrobin           ###   ########.fr        #
+#    Updated: 2024/02/07 13:00:47 by hrobin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,14 +26,12 @@ Blink=\033[5m
 Bold=\033[1m
 #---------------------------#
 
-NAME = violence
+NAME = Harl
 
 CC = c++
 
 SRC =	main.cpp \
-        HumanA.cpp \
-        HumanB.cpp \
-        Weapon.cpp
+        Harl.cpp
 
 OBJ = ${SRC:.cpp=.o}
 DEPS = ${SRC:.cpp=.d}
