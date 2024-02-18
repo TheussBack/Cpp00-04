@@ -1,31 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hrobin <hrobin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/31 17:58:11 by hrobin            #+#    #+#             */
-/*   Updated: 2024/02/14 20:17:23 by hrobin           ###   ########.fr       */
+/*   Created: 2024/02/15 17:51:06 by hrobin            #+#    #+#             */
+/*   Updated: 2024/02/18 21:48:57 by hrobin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <algorithm>
 #include <iostream>
+#include <iomanip>
 #include <string>
 
-int main( int ac, char **av )
-{
-	if (ac <= 1)
-	{
-		std::cerr << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-		return (0);
-	}
-	int	i = 0;
-	std::string	input;
+#pragma once
 
-	while (av[++i])
-		input += av[i];
-	std::transform(input.begin(), input.end(), input.begin(), ::toupper);
-	std::cout << input << std::endl;
-}
+class	ClapTrap
+{
+	public:
+
+		ClapTrap();
+		ClapTrap(std::string name);
+		ClapTrap(const ClapTrap& other);
+		~ClapTrap();
+		ClapTrap& operator=(const ClapTrap &other);
+		void attack(const std::string& target);
+		void takeDamage(unsigned int amount);
+		void beRepaired(unsigned int amount);
+
+	private:
+
+		std::string Name;
+		unsigned int Hit_points;
+		unsigned int	Energy_points;
+		unsigned int	Attack_damage;
+
+};

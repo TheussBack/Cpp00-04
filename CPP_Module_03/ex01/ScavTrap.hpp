@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hrobin <hrobin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/15 12:08:52 by hrobin            #+#    #+#             */
-/*   Updated: 2024/02/15 12:08:55 by hrobin           ###   ########.fr       */
+/*   Created: 2024/02/18 19:22:02 by hrobin            #+#    #+#             */
+/*   Updated: 2024/02/18 21:50:31 by hrobin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "ClapTrap.hpp"
 
-int main( void )
+class ScavTrap : public ScavTrap
 {
-    Fixed a;
-    Fixed b( a );
-    Fixed c;
+	private:
+		ScavTrap();
+		ScavTrap(std::string name);
+		ScavTrap(const ScavTrap& other);
+		~ScavTrap();
+	public:
 
-    c = b;
-
-    std::cout << a.getRawBits() << std::endl;
-    std::cout << b.getRawBits() << std::endl;
-    std::cout << c.getRawBits() << std::endl;
-
-    return 0;
-}
+	void guardGate();
+};

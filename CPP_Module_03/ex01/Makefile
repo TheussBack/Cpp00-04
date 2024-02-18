@@ -1,14 +1,15 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: hrobin <hrobin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/04/07 18:52:45 by maparigi          #+#    #+#              #
-#    Updated: 2024/02/13 10:57:35 by hrobin           ###   ########.fr        #
+#    Created: 2024/02/18 19:16:55 by hrobin            #+#    #+#              #
+#    Updated: 2024/02/18 19:17:11 by hrobin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
 
 #----------colors-----------#
 NC=\033[0m
@@ -22,14 +23,15 @@ Purple=\033[0;35m
 Cyan=\033[0;36m
 White=\033[0;37m
 Blink=\033[5m
+Bold=\033[1m
 #---------------------------#
 
-NAME = phonebook
+NAME = ClapTrap
 
 CC = c++
 
-SRC =	MyPhoneBook.cpp \
-		contact.cpp	\
+SRC =	main.cpp \
+		ClapTrap.cpp
 
 OBJ = ${SRC:.cpp=.o}
 DEPS = ${SRC:.cpp=.d}
@@ -43,19 +45,19 @@ all:	${NAME}
 
 ${NAME}:	${OBJ}
 	@${CC} ${CPPFLAGS} ${OBJ} -o ${NAME}
-	@echo "${_SUCCESS} ${Red}- ${NAME} ready.${NC}"
+	@echo "${Red}${Blink}- ${NAME} ready.${NC}"
 
 clean:
 	@rm -f ${OBJ}
+	@echo "${Cyan}$- ${NAME} cleaned.${NC}"
 
 fclean: clean
 	@rm -f ${NAME} ${DEPS}
-	@echo "${Purple}${Blink}- ${NAME} cleaned.${NC}"
+	@echo "${Green} ${NAME} fcleaned.${NC}"
 
 aclean: all clean
 
 re: fclean all
-	@echo "${Yellow}${Blink}- ${NAME} fcleaned.${NC}"
 
 -include : ${DEPS}
 

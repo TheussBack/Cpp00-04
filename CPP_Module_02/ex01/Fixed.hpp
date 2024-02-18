@@ -5,27 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hrobin <hrobin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/15 12:09:04 by hrobin            #+#    #+#             */
-/*   Updated: 2024/02/15 15:49:42 by hrobin           ###   ########.fr       */
+/*   Created: 2024/02/15 12:08:37 by hrobin            #+#    #+#             */
+/*   Updated: 2024/02/15 13:12:52 by hrobin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #pragma once
 
-# include <iostream>
+#include <iostream>
+#include <cmath>
 
 class Fixed
 {
     public:
 
         Fixed();
-        Fixed( const Fixed &neu );
-        Fixed& operator=( const Fixed &neu );
+        Fixed(const int chier); //transformer chier en nombre a vrigule fix
+        Fixed(const float chier); //convertir en virgule fixe ?
+        Fixed( const Fixed &other );
+        Fixed& operator=( const Fixed &other);
         ~Fixed();
 
-        int     getRawBits( void ) const; //permet d'obtenir la représentation brute du nombre à virgule fixe
-        void    setRawBits( int const raw ); //permet de modifier cette représentation brute, mettre à jour la représentation interne du nombre à virgule fixe en fonction de cette valeur brute fournie.
+        int     getRawBits( void ) const;
+        void    setRawBits( int const raw );
+        float   toFloat(void) const;
+        int toInt(void) const;
+
 
     private:
 
@@ -34,3 +40,4 @@ class Fixed
 
 };
 
+std::ostream &operator<<(std::ostream &out, Fixed const &value);

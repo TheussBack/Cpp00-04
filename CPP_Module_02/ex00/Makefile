@@ -6,7 +6,7 @@
 #    By: hrobin <hrobin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/08 12:43:14 by hrobin            #+#    #+#              #
-#    Updated: 2024/02/08 14:18:35 by hrobin           ###   ########.fr        #
+#    Updated: 2024/02/13 10:54:07 by hrobin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ SRC =	main.cpp \
 OBJ = ${SRC:.cpp=.o}
 DEPS = ${SRC:.cpp=.d}
 
-CPPFLAGS = -Wall -Wextra -Werror #-std=c++98
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 .cpp.o:
 	@${CC} ${CPPFLAGS} -c $< -o ${<:.cpp=.o}
