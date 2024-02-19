@@ -6,20 +6,31 @@
 /*   By: hrobin <hrobin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 19:22:02 by hrobin            #+#    #+#             */
-/*   Updated: 2024/02/18 21:50:31 by hrobin           ###   ########.fr       */
+/*   Updated: 2024/02/19 19:18:18 by hrobin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ScavTrap
+#include <iostream>
+#include <iomanip>
+#include <string>
+
+class ScavTrap : public ClapTrap
 {
 	private:
+
+		std::string Name;
+
+	public:
+
 		ScavTrap();
 		ScavTrap(std::string name);
 		ScavTrap(const ScavTrap& other);
 		~ScavTrap();
-	public:
 
-	void guardGate();
+		ScavTrap& operator=(const ScavTrap &other);
+
+		void guardGate();
+		void attack(const std::string& target);
 };

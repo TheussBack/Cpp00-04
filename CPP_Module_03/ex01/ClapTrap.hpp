@@ -6,7 +6,7 @@
 /*   By: hrobin <hrobin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 17:51:06 by hrobin            #+#    #+#             */
-/*   Updated: 2024/02/18 21:48:57 by hrobin           ###   ########.fr       */
+/*   Updated: 2024/02/19 19:16:35 by hrobin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class	ClapTrap
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
 
-	private:
+	protected:
 
 		std::string Name;
 		unsigned int Hit_points;
