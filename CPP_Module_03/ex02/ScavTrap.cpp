@@ -6,7 +6,7 @@
 /*   By: hrobin <hrobin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 19:22:11 by hrobin            #+#    #+#             */
-/*   Updated: 2024/02/20 18:15:36 by hrobin           ###   ########.fr       */
+/*   Updated: 2024/02/20 18:27:54 by hrobin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 ScavTrap::ScavTrap()
 {
-	std::cout << "Constructeur called" << std::endl;
+	//std::cout << "Constructeur called" << std::endl;
 	Hit_points = 100;
 	Energy_points = 50;
 	Attack_damage = 20;
@@ -22,12 +22,12 @@ ScavTrap::ScavTrap()
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "(ScavTrap) : Destruteur called" << std::endl;
+	//std::cout << "Destruteur called" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
-	std::cout << "Constructor called for " << name << std::endl;
+	std::cout << "(ScavTrap) : Constructor called for " << name << std::endl;
 	Hit_points = 100;
 	Energy_points = 50;
 	Attack_damage = 20;

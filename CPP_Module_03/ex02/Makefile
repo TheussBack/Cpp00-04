@@ -6,7 +6,7 @@
 #    By: hrobin <hrobin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/18 19:16:55 by hrobin            #+#    #+#              #
-#    Updated: 2024/02/20 17:32:36 by hrobin           ###   ########.fr        #
+#    Updated: 2024/02/20 19:11:11 by hrobin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,8 @@ CC = c++
 
 SRC =	main.cpp \
 		ClapTrap.cpp \
-		ScavTrap.cpp
+		ScavTrap.cpp \
+		FragTrap.cpp
 
 OBJ = ${SRC:.cpp=.o}
 DEPS = ${SRC:.cpp=.d}
